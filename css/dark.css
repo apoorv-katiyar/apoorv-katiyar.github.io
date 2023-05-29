@@ -1,0 +1,16 @@
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .intro {
+  color: #fff;
+}
+
+.dark-mode .tagline {
+  color: #ccc;
+}
+
+.dark-mode .icons-social a {
+  color: #ccc;
+}
