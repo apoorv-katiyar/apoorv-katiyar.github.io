@@ -20,6 +20,12 @@
 			font-family: 'Roboto', sans-serif;
 			background-color: #f0f0f0;
 			color: #333;
+			transition: background-color 0.3s ease, color 0.3s ease;
+		}
+		
+		.dark-mode body {
+			background-color: #333;
+			color: #f0f0f0;
 		}
 		
 		main {
@@ -74,6 +80,8 @@
 			<a target="_blank" href="https://www.instagram.com/apoorv__katiyar/"><i class="fab fa-instagram"></i></a>
 			<a target="_blank" href="https://leetcode.com/Apoorv0001/"><i class="fab fa-leetcode"></i></a>
 	    </div>
+
+		<button id="darkModeToggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 	</main>
-</body>
-</html>
+
+	
