@@ -22,12 +22,19 @@
 			color: #333;
 		}
 		
+		header, footer {
+			background-color: #000;
+			color: #fff;
+			padding: 10px;
+		}
+		
 		main {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			height: 100vh;
+			min-height: 100vh;
+			padding: 20px;
 		}
 		
 		.intro {
@@ -77,6 +84,10 @@
 	</style>
 </head>
 <body>
+	<header>
+		<h1 style="text-align: center;">Apoorv Katiyar</h1>
+	</header>
+
 	<main>
 		<div class="intro">Hello, I'm Apoorv Katiyar!</div>
 		<div class="tagline">A DevOps Enthusiast | Code Fanatic</div>
@@ -90,4 +101,15 @@
 			<a target="_blank" href="https://leetcode.com/Apoorv0001/"><i class="fab fa-leetcode"></i></a>
 	    </div>
 
-		<div class="contacts
+		<div class="contacts-section">
+			<h2>Contact Information</h2>
+			<p>Email: apoorv@example.com</p>
+			<p>Phone: +1 123-456-7890</p>
+		</div>
+	</main>
+
+	<footer>
+		<p style="text-align: center;">&copy; 2023 Apoorv Katiyar. All rights reserved.</p>
+	</footer>
+</body>
+</html>
