@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the fundamentals of container orchestration and how to deploy your first application on Kubernetes.">
+    <meta name="keywords" content="Kubernetes, K8s, Container Orchestration, DevOps, Tutorial">
+    <meta name="author" content="Apoorv Katiyar">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://apoorv-katiyar.github.io/posts/kubernetes-beginners-guide.html">
+    <meta property="og:title" content="Getting Started with Kubernetes: A Beginner's Guide">
+    <meta property="og:description" content="Learn the fundamentals of container orchestration and how to deploy your first application on Kubernetes.">
+    
+    <title>Getting Started with Kubernetes: A Beginner's Guide | Apoorv Katiyar</title>
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/portfolio.css">
+</head>
+<body>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <a href="../index.html" class="nav-brand" aria-label="Apoorv Katiyar - Home">
+            <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+            <span class="brand-text">AK</span>
+        </a>
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="../index.html" class="nav-link" role="menuitem">Home</a></li>
+            <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
+            <li role="none"><a href="../skills.html" class="nav-link" role="menuitem">Skills</a></li>
+            <li role="none"><a href="../projects.html" class="nav-link" role="menuitem">Projects</a></li>
+            <li role="none"><a href="../achievements.html" class="nav-link" role="menuitem">Achievements</a></li>
+            <li role="none"><a href="../blog.html" class="nav-link active" role="menuitem" aria-current="page">Blog</a></li>
+            <li role="none"><a href="../contact.html" class="nav-link" role="menuitem">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">
+                <span class="material-icons-round theme-icon-dark" aria-hidden="true">dark_mode</span>
+                <span class="material-icons-round theme-icon-light" aria-hidden="true">light_mode</span>
+            </button>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <article class="blog-post page-section">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-tag" aria-hidden="true">📝</span>
+                <h1 class="section-title">Blog Post</h1>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <!-- Back Link -->
+            <a href="../blog.html" class="back-link">
+                <span class="material-icons-round">arrow_back</span>
+                Back to All Articles
+            </a>
+
+            <!-- Post Card -->
+            <div class="post-card glass-card">
+                <!-- Post Header -->
+                <header class="post-header">
+                    <span class="blog-category">DevOps</span>
+                    <h2 class="post-title">Getting Started with Kubernetes: A Beginner's Guide</h2>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="author-avatar-small">
+                                <span class="material-icons-round">person</span>
+                            </div>
+                            <span>Apoorv Katiyar</span>
+                        </div>
+                        <span class="meta-divider">•</span>
+                        <time class="post-date" datetime="2024-12-10">
+                            <span class="material-icons-round">calendar_today</span>
+                            December 10, 2024
+                        </time>
+                        <span class="meta-divider">•</span>
+                        <span class="post-read-time">
+                            <span class="material-icons-round">schedule</span>
+                            5 min read
+                        </span>
+                    </div>
+                    <div class="post-tags">
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">Containers</span>
+                        <span class="skill-tag">Tutorial</span>
+                    </div>
+                </header>
+
+                <!-- Post Content -->
+                <div class="post-body">
+                    <p>
+                        Kubernetes has become the de facto standard for container orchestration. If you're new to the world of containers and orchestration, this guide will help you understand the fundamentals and get started with your first deployment.
+                    </p>
+
+                    <h2>What is Kubernetes?</h2>
+                    <p>
+                        Kubernetes (often abbreviated as K8s) is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. Originally developed by Google and now maintained by the Cloud Native Computing Foundation (CNCF), it has become essential in modern DevOps practices.
+                    </p>
+
+                    <h2>Why Use Kubernetes?</h2>
+                    <p>Here are some key benefits:</p>
+                    <ul>
+                        <li><strong>Automatic Scaling:</strong> Scale your applications up or down based on demand</li>
+                        <li><strong>Self-Healing:</strong> Automatically replaces failed containers</li>
+                        <li><strong>Load Balancing:</strong> Distributes traffic across your containers</li>
+                        <li><strong>Rolling Updates:</strong> Update your applications with zero downtime</li>
+                        <li><strong>Secret Management:</strong> Securely store and manage sensitive information</li>
+                    </ul>
+
+                    <h2>Core Concepts</h2>
+                    
+                    <h3>Pods</h3>
+                    <p>
+                        A Pod is the smallest deployable unit in Kubernetes. It represents a single instance of a running process and can contain one or more containers that share storage and network resources.
+                    </p>
+
+                    <h3>Deployments</h3>
+                    <p>
+                        A Deployment provides declarative updates for Pods. You describe a desired state, and the Deployment controller changes the actual state to match.
+                    </p>
+
+                    <h3>Services</h3>
+                    <p>
+                        A Service is an abstraction that defines a logical set of Pods and a policy to access them. Services enable network access to a set of Pods.
+                    </p>
+
+                    <h2>Your First Deployment</h2>
+                    <p>Here's a simple example of deploying an nginx web server:</p>
+
+                    <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80</code></pre>
+
+                    <p>Apply this configuration with:</p>
+                    <pre><code>kubectl apply -f nginx-deployment.yaml</code></pre>
+
+                    <h2>Next Steps</h2>
+                    <p>
+                        Now that you understand the basics, I recommend:
+                    </p>
+                    <ul>
+                        <li>Setting up a local cluster with Minikube or Kind</li>
+                        <li>Exploring kubectl commands</li>
+                        <li>Learning about ConfigMaps and Secrets</li>
+                        <li>Understanding Ingress controllers</li>
+                    </ul>
+
+                    <blockquote>
+                        "Kubernetes is not just a technology – it's a way of thinking about how to build and operate distributed systems."
+                    </blockquote>
+
+                    <p>
+                        Stay tuned for more in-depth tutorials on Kubernetes! In the next post, we'll cover Helm charts and how to manage complex deployments.
+                    </p>
+                </div>
+
+                <!-- Post Footer -->
+                <footer class="post-footer">
+                    <div class="share-section">
+                        <span class="share-label">Share this post:</span>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=Getting%20Started%20with%20Kubernetes&url=https://apoorv-katiyar.github.io/posts/kubernetes-beginners-guide.html" target="_blank" class="social-link" title="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://apoorv-katiyar.github.io/posts/kubernetes-beginners-guide.html" target="_blank" class="social-link" title="Share on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p>Designed & Built by <strong>Apoorv Katiyar</strong></p>
+            <p class="footer-tech">Made with <span class="heart" aria-hidden="true">♥</span> using HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="Scroll to top">
+        <span class="material-icons-round" aria-hidden="true">keyboard_arrow_up</span>
+    </button>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

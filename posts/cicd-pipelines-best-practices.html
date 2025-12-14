@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best practices for creating reliable, maintainable continuous integration and deployment pipelines.">
+    <meta name="keywords" content="CI/CD, DevOps, GitHub Actions, GitLab CI, Jenkins, Automation">
+    <meta name="author" content="Apoorv Katiyar">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://apoorv-katiyar.github.io/posts/cicd-pipelines-best-practices.html">
+    <meta property="og:title" content="Building CI/CD Pipelines That Actually Work">
+    <meta property="og:description" content="Best practices for creating reliable, maintainable continuous integration and deployment pipelines.">
+    
+    <title>Building CI/CD Pipelines That Actually Work | Apoorv Katiyar</title>
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/portfolio.css">
+</head>
+<body>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <a href="../index.html" class="nav-brand" aria-label="Apoorv Katiyar - Home">
+            <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+            <span class="brand-text">AK</span>
+        </a>
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="../index.html" class="nav-link" role="menuitem">Home</a></li>
+            <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
+            <li role="none"><a href="../skills.html" class="nav-link" role="menuitem">Skills</a></li>
+            <li role="none"><a href="../projects.html" class="nav-link" role="menuitem">Projects</a></li>
+            <li role="none"><a href="../achievements.html" class="nav-link" role="menuitem">Achievements</a></li>
+            <li role="none"><a href="../blog.html" class="nav-link active" role="menuitem" aria-current="page">Blog</a></li>
+            <li role="none"><a href="../contact.html" class="nav-link" role="menuitem">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">
+                <span class="material-icons-round theme-icon-dark" aria-hidden="true">dark_mode</span>
+                <span class="material-icons-round theme-icon-light" aria-hidden="true">light_mode</span>
+            </button>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <article class="blog-post page-section">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-tag" aria-hidden="true">📝</span>
+                <h1 class="section-title">Blog Post</h1>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <!-- Back Link -->
+            <a href="../blog.html" class="back-link">
+                <span class="material-icons-round">arrow_back</span>
+                Back to All Articles
+            </a>
+
+            <!-- Post Card -->
+            <div class="post-card glass-card">
+                <!-- Post Header -->
+                <header class="post-header">
+                    <span class="blog-category">Automation</span>
+                    <h2 class="post-title">Building CI/CD Pipelines That Actually Work</h2>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="author-avatar-small">
+                                <span class="material-icons-round">person</span>
+                            </div>
+                            <span>Apoorv Katiyar</span>
+                        </div>
+                        <span class="meta-divider">•</span>
+                        <time class="post-date" datetime="2024-11-28">
+                            <span class="material-icons-round">calendar_today</span>
+                            November 28, 2024
+                        </time>
+                        <span class="meta-divider">•</span>
+                        <span class="post-read-time">
+                            <span class="material-icons-round">schedule</span>
+                            8 min read
+                        </span>
+                    </div>
+                    <div class="post-tags">
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">Automation</span>
+                        <span class="skill-tag">Best Practices</span>
+                    </div>
+                </header>
+
+                <!-- Post Content -->
+                <div class="post-body">
+                    <p>
+                        After years of building and maintaining CI/CD pipelines for various organizations, I've learned that the difference between a pipeline that "works" and one that truly serves your team comes down to a few key principles.
+                    </p>
+
+                    <h2>The Problem with Most Pipelines</h2>
+                    <p>
+                        Many CI/CD pipelines start simple but quickly become unmaintainable spaghetti. They're slow, flaky, and nobody understands how they work. Sound familiar?
+                    </p>
+
+                    <h2>Principle 1: Keep It Simple</h2>
+                    <p>
+                        The best pipeline is the simplest one that meets your needs. Don't over-engineer from day one.
+                    </p>
+                    <pre><code># Start simple - GitHub Actions example
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: npm ci && npm run build
+      - name: Test
+        run: npm test</code></pre>
+
+                    <h2>Principle 2: Fail Fast</h2>
+                    <p>
+                        Order your pipeline stages so the fastest checks run first. Why wait 10 minutes for a Docker build only to fail on a linting error?
+                    </p>
+                    <ul>
+                        <li><strong>Stage 1:</strong> Linting & formatting (seconds)</li>
+                        <li><strong>Stage 2:</strong> Unit tests (minutes)</li>
+                        <li><strong>Stage 3:</strong> Build (minutes)</li>
+                        <li><strong>Stage 4:</strong> Integration tests (longer)</li>
+                        <li><strong>Stage 5:</strong> Deploy (as needed)</li>
+                    </ul>
+
+                    <h2>Principle 3: Cache Everything</h2>
+                    <p>
+                        Caching can cut your pipeline time by 50% or more. Cache:
+                    </p>
+                    <ul>
+                        <li>Package dependencies (npm, pip, Maven)</li>
+                        <li>Docker layers</li>
+                        <li>Build artifacts</li>
+                        <li>Test fixtures</li>
+                    </ul>
+
+                    <pre><code>- name: Cache node modules
+  uses: actions/cache@v3
+  with:
+    path: ~/.npm
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    restore-keys: |
+      ${{ runner.os }}-node-</code></pre>
+
+                    <h2>Principle 4: Make It Reproducible</h2>
+                    <p>
+                        Your pipeline should produce the same result every time, given the same inputs. This means:
+                    </p>
+                    <ul>
+                        <li>Pin your dependencies (use lock files)</li>
+                        <li>Use specific image tags, not <code>:latest</code></li>
+                        <li>Avoid time-dependent tests</li>
+                        <li>Isolate your test environment</li>
+                    </ul>
+
+                    <h2>Principle 5: Security First</h2>
+                    <p>
+                        Integrate security scanning early:
+                    </p>
+                    <pre><code>- name: Run Snyk to check for vulnerabilities
+  uses: snyk/actions/node@master
+  env:
+    SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+- name: SonarQube Scan
+  uses: sonarsource/sonarqube-scan-action@master</code></pre>
+
+                    <h2>Principle 6: Monitor Your Pipelines</h2>
+                    <p>
+                        Track DORA metrics to understand your pipeline health:
+                    </p>
+                    <ul>
+                        <li><strong>Deployment Frequency:</strong> How often do you deploy?</li>
+                        <li><strong>Lead Time:</strong> From commit to production</li>
+                        <li><strong>Change Failure Rate:</strong> How often do deployments fail?</li>
+                        <li><strong>MTTR:</strong> Mean time to recover from failures</li>
+                    </ul>
+
+                    <h2>Real-World Example</h2>
+                    <p>
+                        At my current role, I led a migration from GitLab CI to GitHub Actions for 50+ applications. Here's what we achieved:
+                    </p>
+                    <ul>
+                        <li>⚡ 50% faster deployments</li>
+                        <li>📉 80% reduction in flaky tests</li>
+                        <li>🔄 Reusable workflow templates across teams</li>
+                        <li>📊 Full DORA metrics visibility</li>
+                    </ul>
+
+                    <blockquote>
+                        "A good CI/CD pipeline is invisible. You notice it only when it's broken."
+                    </blockquote>
+
+                    <h2>Key Takeaways</h2>
+                    <ol>
+                        <li>Start simple, iterate based on actual needs</li>
+                        <li>Optimize for developer experience</li>
+                        <li>Cache aggressively</li>
+                        <li>Fail fast to save time</li>
+                        <li>Security is not optional</li>
+                        <li>Measure everything</li>
+                    </ol>
+
+                    <p>
+                        In my next post, I'll dive deep into creating reusable GitHub Actions workflow templates. Stay tuned!
+                    </p>
+                </div>
+
+                <!-- Post Footer -->
+                <footer class="post-footer">
+                    <div class="share-section">
+                        <span class="share-label">Share this post:</span>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=Building%20CI/CD%20Pipelines%20That%20Actually%20Work&url=https://apoorv-katiyar.github.io/posts/cicd-pipelines-best-practices.html" target="_blank" class="social-link" title="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://apoorv-katiyar.github.io/posts/cicd-pipelines-best-practices.html" target="_blank" class="social-link" title="Share on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p>Designed & Built by <strong>Apoorv Katiyar</strong></p>
+            <p class="footer-tech">Made with <span class="heart" aria-hidden="true">♥</span> using HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="Scroll to top">
+        <span class="material-icons-round" aria-hidden="true">keyboard_arrow_up</span>
+    </button>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

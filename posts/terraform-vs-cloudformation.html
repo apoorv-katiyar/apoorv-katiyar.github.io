@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive comparison of Terraform and CloudFormation - the two most popular Infrastructure as Code tools.">
+    <meta name="keywords" content="Terraform, CloudFormation, IaC, Infrastructure as Code, AWS, DevOps">
+    <meta name="author" content="Apoorv Katiyar">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://apoorv-katiyar.github.io/posts/terraform-vs-cloudformation.html">
+    <meta property="og:title" content="Infrastructure as Code: Terraform vs CloudFormation">
+    <meta property="og:description" content="A comprehensive comparison of the two most popular IaC tools and when to use each one.">
+    
+    <title>Infrastructure as Code: Terraform vs CloudFormation | Apoorv Katiyar</title>
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/portfolio.css">
+</head>
+<body>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <a href="../index.html" class="nav-brand" aria-label="Apoorv Katiyar - Home">
+            <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+            <span class="brand-text">AK</span>
+        </a>
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="../index.html" class="nav-link" role="menuitem">Home</a></li>
+            <li role="none"><a href="../about.html" class="nav-link" role="menuitem">About</a></li>
+            <li role="none"><a href="../skills.html" class="nav-link" role="menuitem">Skills</a></li>
+            <li role="none"><a href="../projects.html" class="nav-link" role="menuitem">Projects</a></li>
+            <li role="none"><a href="../achievements.html" class="nav-link" role="menuitem">Achievements</a></li>
+            <li role="none"><a href="../blog.html" class="nav-link active" role="menuitem" aria-current="page">Blog</a></li>
+            <li role="none"><a href="../contact.html" class="nav-link" role="menuitem">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">
+                <span class="material-icons-round theme-icon-dark" aria-hidden="true">dark_mode</span>
+                <span class="material-icons-round theme-icon-light" aria-hidden="true">light_mode</span>
+            </button>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <article class="blog-post page-section">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-tag" aria-hidden="true">📝</span>
+                <h1 class="section-title">Blog Post</h1>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <!-- Back Link -->
+            <a href="../blog.html" class="back-link">
+                <span class="material-icons-round">arrow_back</span>
+                Back to All Articles
+            </a>
+
+            <!-- Post Card -->
+            <div class="post-card glass-card">
+                <!-- Post Header -->
+                <header class="post-header">
+                    <span class="blog-category">Cloud</span>
+                    <h2 class="post-title">Infrastructure as Code: Terraform vs CloudFormation</h2>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="author-avatar-small">
+                                <span class="material-icons-round">person</span>
+                            </div>
+                            <span>Apoorv Katiyar</span>
+                        </div>
+                        <span class="meta-divider">•</span>
+                        <time class="post-date" datetime="2024-11-15">
+                            <span class="material-icons-round">calendar_today</span>
+                            November 15, 2024
+                        </time>
+                        <span class="meta-divider">•</span>
+                        <span class="post-read-time">
+                            <span class="material-icons-round">schedule</span>
+                            6 min read
+                        </span>
+                    </div>
+                    <div class="post-tags">
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">CloudFormation</span>
+                        <span class="skill-tag">IaC</span>
+                        <span class="skill-tag">AWS</span>
+                    </div>
+                </header>
+
+                <!-- Post Content -->
+                <div class="post-body">
+                    <p>
+                        Choosing the right Infrastructure as Code (IaC) tool is crucial for your cloud journey. In this article, I'll compare Terraform and AWS CloudFormation based on my experience working with both.
+                    </p>
+
+                    <h2>Quick Overview</h2>
+                    
+                    <h3>Terraform</h3>
+                    <p>
+                        HashiCorp's Terraform is a cloud-agnostic IaC tool that uses HCL (HashiCorp Configuration Language). It supports multiple cloud providers and services through its provider ecosystem.
+                    </p>
+
+                    <h3>CloudFormation</h3>
+                    <p>
+                        AWS CloudFormation is AWS's native IaC service. It uses JSON or YAML templates to define and provision AWS resources.
+                    </p>
+
+                    <h2>Syntax Comparison</h2>
+                    
+                    <p><strong>Terraform HCL:</strong></p>
+                    <pre><code>resource "aws_instance" "web" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t3.micro"
+  
+  tags = {
+    Name = "web-server"
+  }
+}</code></pre>
+
+                    <p><strong>CloudFormation YAML:</strong></p>
+                    <pre><code>Resources:
+  WebServer:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c55b159cbfafe1f0
+      InstanceType: t3.micro
+      Tags:
+        - Key: Name
+          Value: web-server</code></pre>
+
+                    <h2>Feature Comparison</h2>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-item">
+                            <h4>Multi-Cloud</h4>
+                            <p><strong>Terraform:</strong> ✅ Yes</p>
+                            <p><strong>CloudFormation:</strong> ❌ AWS Only</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4>State Management</h4>
+                            <p><strong>Terraform:</strong> External (S3, etc.)</p>
+                            <p><strong>CloudFormation:</strong> AWS Managed</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4>Learning Curve</h4>
+                            <p><strong>Terraform:</strong> Moderate</p>
+                            <p><strong>CloudFormation:</strong> Moderate</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4>Modules/Reusability</h4>
+                            <p><strong>Terraform:</strong> Excellent</p>
+                            <p><strong>CloudFormation:</strong> Good (nested stacks)</p>
+                        </div>
+                    </div>
+
+                    <h2>When to Use Terraform</h2>
+                    <ul>
+                        <li>Multi-cloud or hybrid cloud environments</li>
+                        <li>Need for extensive third-party integrations</li>
+                        <li>Want a single tool for all infrastructure</li>
+                        <li>Team already familiar with HCL</li>
+                        <li>Need advanced state management options</li>
+                    </ul>
+
+                    <h2>When to Use CloudFormation</h2>
+                    <ul>
+                        <li>AWS-only environment</li>
+                        <li>Want tight integration with AWS services</li>
+                        <li>Need AWS Support for IaC issues</li>
+                        <li>Using AWS-specific features like StackSets</li>
+                        <li>Prefer managed state without additional setup</li>
+                    </ul>
+
+                    <h2>My Recommendation</h2>
+                    <p>
+                        In my experience, the choice often comes down to your cloud strategy:
+                    </p>
+
+                    <blockquote>
+                        If you're 100% AWS and plan to stay that way, CloudFormation is a solid choice. For everything else, Terraform provides more flexibility and a richer ecosystem.
+                    </blockquote>
+
+                    <h2>Best Practices for Both</h2>
+                    <ol>
+                        <li><strong>Version Control:</strong> Always store your IaC in Git</li>
+                        <li><strong>Modularize:</strong> Break down large configurations into modules/nested stacks</li>
+                        <li><strong>Use Variables:</strong> Never hardcode values</li>
+                        <li><strong>CI/CD Integration:</strong> Automate your infrastructure deployments</li>
+                        <li><strong>Code Review:</strong> Treat IaC like application code</li>
+                    </ol>
+
+                    <h2>Conclusion</h2>
+                    <p>
+                        Both tools are mature and production-ready. Your choice should be based on your specific requirements, team expertise, and long-term cloud strategy. 
+                    </p>
+                    <p>
+                        Want me to dive deeper into either tool? Let me know in the comments or reach out on LinkedIn!
+                    </p>
+                </div>
+
+                <!-- Post Footer -->
+                <footer class="post-footer">
+                    <div class="share-section">
+                        <span class="share-label">Share this post:</span>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=Terraform%20vs%20CloudFormation&url=https://apoorv-katiyar.github.io/posts/terraform-vs-cloudformation.html" target="_blank" class="social-link" title="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://apoorv-katiyar.github.io/posts/terraform-vs-cloudformation.html" target="_blank" class="social-link" title="Share on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p>Designed & Built by <strong>Apoorv Katiyar</strong></p>
+            <p class="footer-tech">Made with <span class="heart" aria-hidden="true">♥</span> using HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="Scroll to top">
+        <span class="material-icons-round" aria-hidden="true">keyboard_arrow_up</span>
+    </button>
+
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -3,160 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact - Apoorv Katiyar">
+    <meta name="description" content="Contact Apoorv Katiyar - DevOps Engineer based in Bengaluru, India. Get in touch for collaborations and opportunities.">
+    <meta name="keywords" content="Contact, Apoorv Katiyar, DevOps Engineer, Bengaluru, Hire">
+    <meta name="author" content="Apoorv Katiyar">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apoorv-katiyar.github.io/contact.html">
+    <meta property="og:title" content="Contact | Apoorv Katiyar">
+    <meta property="og:description" content="Get in touch with Apoorv Katiyar.">
+    
+    <link rel="canonical" href="https://apoorv-katiyar.github.io/contact.html">
     
     <title>Contact | Apoorv Katiyar</title>
     
-    <link rel="icon" href="favicon.ico" type="image/png" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
-    
-    <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     
+    <link rel="preload" href="css/portfolio.css" as="style">
     <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="bg-gradient"></div>
-    <div class="bg-grid"></div>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
     
     <!-- Navigation -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-brand">
-            <span class="brand-icon">&lt;/&gt;</span>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-brand" aria-label="Apoorv Katiyar - Home">
+            <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
             <span class="brand-text">AK</span>
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="skills.html" class="nav-link">Skills</a></li>
-            <li><a href="projects.html" class="nav-link">Projects</a></li>
-            <li><a href="blog.html" class="nav-link">Blog</a></li>
-            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+            <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+            <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills</a></li>
+            <li role="none"><a href="projects.html" class="nav-link" role="menuitem">Projects</a></li>
+            <li role="none"><a href="achievements.html" class="nav-link" role="menuitem">Achievements</a></li>
+            <li role="none"><a href="blog.html" class="nav-link" role="menuitem">Blog</a></li>
+            <li role="none"><a href="contact.html" class="nav-link active" role="menuitem" aria-current="page">Contact</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
-                <span class="material-icons-round theme-icon-dark">dark_mode</span>
-                <span class="material-icons-round theme-icon-light">light_mode</span>
+            <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">
+                <span class="material-icons-round theme-icon-dark" aria-hidden="true">dark_mode</span>
+                <span class="material-icons-round theme-icon-light" aria-hidden="true">light_mode</span>
             </button>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact page-section">
-        <div class="section-header">
-            <span class="section-tag">05</span>
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="contact-content">
-            <p class="contact-text">
-                I'm currently open to new opportunities and collaborations. 
-                Whether you need a DevOps Engineer to optimize your CI/CD pipelines or just want to say hi, feel free to reach out!
-            </p>
-            
-            <!-- Contact Info Cards -->
-            <div class="contact-info-grid">
-                <div class="contact-info-card">
-                    <span class="material-icons-round">location_on</span>
-                    <h4>Location</h4>
-                    <p>Bengaluru, India</p>
-                </div>
-                <div class="contact-info-card">
-                    <span class="material-icons-round">email</span>
-                    <h4>Email</h4>
-                    <a href="mailto:Katiyar.apoorv97@gmail.com">Katiyar.apoorv97@gmail.com</a>
-                </div>
-                <div class="contact-info-card">
-                    <span class="material-icons-round">phone</span>
-                    <h4>Phone</h4>
-                    <a href="tel:+918960050564">+91 8960050564</a>
-                </div>
+    <main>
+        <!-- Contact Section -->
+        <section id="contact" class="contact page-section" aria-labelledby="contact-title">
+            <div class="section-header">
+                <span class="section-tag" aria-hidden="true">05</span>
+                <h1 class="section-title" id="contact-title">Get In Touch</h1>
+                <div class="section-line" aria-hidden="true"></div>
             </div>
-            
-            <!-- Contact Form -->
-            <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="form-group">
-                    <label for="name" class="form-label">
-                        <span class="material-icons-round">person</span>
-                        Your Name
-                    </label>
-                    <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+            <div class="contact-content">
+                <p class="contact-text">
+                    I'm currently open to new opportunities and collaborations. 
+                    Whether you need a DevOps Engineer to optimize your CI/CD pipelines or just want to say hi, feel free to reach out!
+                </p>
+                
+                <!-- Contact Info Cards -->
+                <div class="contact-info-grid">
+                    <address class="contact-info-card">
+                        <span class="material-icons-round" aria-hidden="true">location_on</span>
+                        <h2>Location</h2>
+                        <p>Bengaluru, India</p>
+                    </address>
+                    <div class="contact-info-card">
+                        <span class="material-icons-round" aria-hidden="true">email</span>
+                        <h2>Email</h2>
+                        <a href="mailto:Katiyar.apoorv97@gmail.com">Katiyar.apoorv97@gmail.com</a>
+                    </div>
+                    <div class="contact-info-card">
+                        <span class="material-icons-round" aria-hidden="true">phone</span>
+                        <h2>Phone</h2>
+                        <a href="tel:+918960050564">+91 8960050564</a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email" class="form-label">
-                        <span class="material-icons-round">email</span>
-                        Your Email
-                    </label>
-                    <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject" class="form-label">
-                        <span class="material-icons-round">subject</span>
-                        Subject
-                    </label>
-                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Collaboration">
-                </div>
-                <div class="form-group">
-                    <label for="message" class="form-label">
-                        <span class="material-icons-round">chat</span>
-                        Message
-                    </label>
-                    <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your message here..." rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-large form-submit">
-                    <span class="material-icons-round">send</span>
-                    Send Message
-                </button>
-                <p class="form-status" id="form-status"></p>
-            </form>
+                
+                <!-- Contact Form -->
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            <span class="material-icons-round" aria-hidden="true">person</span>
+                            Your Name
+                        </label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            <span class="material-icons-round" aria-hidden="true">email</span>
+                            Your Email
+                        </label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">
+                            <span class="material-icons-round" aria-hidden="true">subject</span>
+                            Subject
+                        </label>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Collaboration">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">
+                            <span class="material-icons-round" aria-hidden="true">chat</span>
+                            Message
+                        </label>
+                        <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your message here..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large form-submit">
+                        <span class="material-icons-round" aria-hidden="true">send</span>
+                        Send Message
+                    </button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
 
-            <div class="contact-divider">
-                <span>or connect with me on</span>
-            </div>
+                <div class="contact-divider" aria-hidden="true">
+                    <span>or connect with me on</span>
+                </div>
 
-            <div class="contact-socials">
-                <a href="https://github.com/apoorv-katiyar" target="_blank" class="social-link-large">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/apoorvkatiyar" target="_blank" class="social-link-large">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://twitter.com/KatiyarApoorv" target="_blank" class="social-link-large">
-                    <i class="fab fa-twitter"></i>
-                    <span>Twitter</span>
-                </a>
+                <div class="contact-socials">
+                    <a href="https://github.com/apoorv-katiyar" target="_blank" rel="noopener noreferrer" class="social-link-large" aria-label="GitHub Profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/apoorvkatiyar" target="_blank" rel="noopener noreferrer" class="social-link-large" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://twitter.com/KatiyarApoorv" target="_blank" rel="noopener noreferrer" class="social-link-large" aria-label="Twitter Profile">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                        <span>Twitter</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-content">
             <p>Designed & Built by <strong>Apoorv Katiyar</strong></p>
-            <p class="footer-tech">Made with <span class="heart">♥</span> using HTML, CSS & JavaScript</p>
+            <p class="footer-tech">Made with <span class="heart" aria-hidden="true">♥</span> using HTML, CSS & JavaScript</p>
         </div>
     </footer>
 
-    <!-- Scroll to top button -->
     <button class="scroll-top" aria-label="Scroll to top">
-        <span class="material-icons-round">keyboard_arrow_up</span>
+        <span class="material-icons-round" aria-hidden="true">keyboard_arrow_up</span>
     </button>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
