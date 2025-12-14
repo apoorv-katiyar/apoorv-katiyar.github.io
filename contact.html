@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact - Apoorv Katiyar">
+    
+    <title>Contact | Apoorv Katiyar</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <span class="brand-icon">&lt;/&gt;</span>
+            <span class="brand-text">AK</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="skills.html" class="nav-link">Skills</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+                <span class="material-icons-round theme-icon-dark">dark_mode</span>
+                <span class="material-icons-round theme-icon-light">light_mode</span>
+            </button>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact page-section">
+        <div class="section-header">
+            <span class="section-tag">05</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-content">
+            <p class="contact-text">
+                I'm currently open to new opportunities and collaborations. 
+                Whether you need a DevOps Engineer to optimize your CI/CD pipelines or just want to say hi, feel free to reach out!
+            </p>
+            
+            <!-- Contact Info Cards -->
+            <div class="contact-info-grid">
+                <div class="contact-info-card">
+                    <span class="material-icons-round">location_on</span>
+                    <h4>Location</h4>
+                    <p>Bengaluru, India</p>
+                </div>
+                <div class="contact-info-card">
+                    <span class="material-icons-round">email</span>
+                    <h4>Email</h4>
+                    <a href="mailto:Katiyar.apoorv97@gmail.com">Katiyar.apoorv97@gmail.com</a>
+                </div>
+                <div class="contact-info-card">
+                    <span class="material-icons-round">phone</span>
+                    <h4>Phone</h4>
+                    <a href="tel:+918960050564">+91 8960050564</a>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name" class="form-label">
+                        <span class="material-icons-round">person</span>
+                        Your Name
+                    </label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <span class="material-icons-round">email</span>
+                        Your Email
+                    </label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="form-label">
+                        <span class="material-icons-round">subject</span>
+                        Subject
+                    </label>
+                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Collaboration">
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">
+                        <span class="material-icons-round">chat</span>
+                        Message
+                    </label>
+                    <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your message here..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large form-submit">
+                    <span class="material-icons-round">send</span>
+                    Send Message
+                </button>
+                <p class="form-status" id="form-status"></p>
+            </form>
+
+            <div class="contact-divider">
+                <span>or connect with me on</span>
+            </div>
+
+            <div class="contact-socials">
+                <a href="https://github.com/apoorv-katiyar" target="_blank" class="social-link-large">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/apoorvkatiyar" target="_blank" class="social-link-large">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://twitter.com/KatiyarApoorv" target="_blank" class="social-link-large">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Designed & Built by <strong>Apoorv Katiyar</strong></p>
+            <p class="footer-tech">Made with <span class="heart">♥</span> using HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <span class="material-icons-round">keyboard_arrow_up</span>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

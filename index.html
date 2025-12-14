@@ -1,34 +1,467 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>Apoorv Katiyar</title>
-
-	<link rel="icon" href="favicon.ico" type="image/png" />
-
-	<link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300" rel="stylesheet">
-	<link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/themes/white-grey.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apoorv Katiyar - DevOps Engineer with 4+ years of experience in CI/CD, Kubernetes, AWS, and automation">
+    
+    <title>Apoorv Katiyar | DevOps Engineer</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
-	<main>
-		<div class="intro">Hello, I'm Apoorv Katiyar!</div>
-		<div class="tagline">A DevOps Engineer | Code Fanatic  </div>
-	
-		<div class="icons-social">
-			<a target="_blank" href="https://github.com/apoorv-katiyar"><i class="fab fa-github"></i></a>
-			<a target="_blank" href="https://twitter.com/KatiyarApoorv"><i class="fab fa-twitter"></i></a>
-			<a target="_blank" href="https://www.linkedin.com/in/apoorvkatiyar"><i class="fab fa-linkedin"></i></a>
-			<a target="_blank" href="https://www.instagram.com/ap00rvkatiyar/"><i class="fab fa-instagram"></i></a>
-			<a target="_blank" href="https://leetcode.com/apoorv-katiyar/"><i class="fab fa-leetcode"></i></a>
-	    </div>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    
+    <!-- Floating Orbs -->
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
 
-	</main>
+    <!-- Tech Stack Marquee -->
+    <div class="tech-marquee">
+        <div class="marquee-content">
+            <span class="marquee-item"><i class="fab fa-docker"></i> Docker</span>
+            <span class="marquee-item"><i class="fab fa-aws"></i> AWS</span>
+            <span class="marquee-item"><span class="material-icons-round">cloud</span> Kubernetes</span>
+            <span class="marquee-item"><i class="fab fa-github"></i> GitHub Actions</span>
+            <span class="marquee-item"><i class="fab fa-gitlab"></i> GitLab CI/CD</span>
+            <span class="marquee-item"><i class="fab fa-python"></i> Python</span>
+            <span class="marquee-item"><span class="material-icons-round">terminal</span> Terraform</span>
+            <span class="marquee-item"><i class="fab fa-linux"></i> Linux</span>
+            <span class="marquee-item"><span class="material-icons-round">security</span> SonarQube</span>
+            <span class="marquee-item"><i class="fab fa-docker"></i> Docker</span>
+            <span class="marquee-item"><i class="fab fa-aws"></i> AWS</span>
+            <span class="marquee-item"><span class="material-icons-round">cloud</span> Kubernetes</span>
+            <span class="marquee-item"><i class="fab fa-github"></i> GitHub Actions</span>
+            <span class="marquee-item"><i class="fab fa-gitlab"></i> GitLab CI/CD</span>
+            <span class="marquee-item"><i class="fab fa-python"></i> Python</span>
+            <span class="marquee-item"><span class="material-icons-round">terminal</span> Terraform</span>
+            <span class="marquee-item"><i class="fab fa-linux"></i> Linux</span>
+            <span class="marquee-item"><span class="material-icons-round">security</span> SonarQube</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <span class="brand-icon">&lt;/&gt;</span>
+            <span class="brand-text">AK</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="skills.html" class="nav-link">Skills</a></li>
+            <li><a href="projects.html" class="nav-link">Projects</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+                <span class="material-icons-round theme-icon-dark">dark_mode</span>
+                <span class="material-icons-round theme-icon-light">light_mode</span>
+            </button>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                Available for opportunities
+            </div>
+            <h1 class="hero-title">
+                <span class="greeting">Hello, I'm</span>
+                <span class="name">Apoorv Katiyar</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typing-text">DevOps Engineer</span>
+                <span class="cursor">|</span>
+            </p>
+            <p class="hero-description">
+                DevOps Engineer with 4+ years of experience in building CI/CD pipelines, 
+                cloud infrastructure, and automation. Based in Bengaluru, India.
+            </p>
+            <div class="hero-cta">
+                <a href="projects.html" class="btn btn-primary">
+                    <span class="material-icons-round">rocket_launch</span>
+                    View My Work
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    <span class="material-icons-round">mail</span>
+                    Get In Touch
+                </a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/apoorv-katiyar" target="_blank" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/apoorvkatiyar" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/KatiyarApoorv" target="_blank" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:Katiyar.apoorv97@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window" id="terminal">
+                <div class="window-header">
+                    <div class="window-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="window-title">terminal ~ try typing commands!</span>
+                </div>
+                <div class="window-content" id="terminal-content">
+                    <div class="terminal-output" id="terminal-output">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> <span class="command">whoami</span>
+                        </div>
+                        <div class="terminal-line output">apoorv-katiyar</div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> <span class="command">help</span>
+                        </div>
+                        <div class="terminal-line output">Available commands: help, whoami, skills, projects, contact, about, clear, date, echo [text]</div>
+                    </div>
+                    <div class="terminal-input-line">
+                        <span class="prompt">$</span>
+                        <input type="text" id="terminal-input" class="terminal-input" placeholder="Type a command..." autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="section-divider wave-divider"></div>
+
+    <!-- About Preview -->
+    <section class="preview-section about-preview-section">
+        <div class="section-header">
+            <span class="section-tag">01</span>
+            <h2 class="section-title">About Me</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-preview-grid">
+            <div class="about-preview-left">
+                <!-- Profile Picture -->
+                <div class="profile-picture-container">
+                    <div class="profile-picture-frame">
+                        <img src="images/profile.jpg" alt="Apoorv Katiyar" class="profile-picture" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-picture-placeholder">
+                            <span class="material-icons-round">person</span>
+                        </div>
+                    </div>
+                    <div class="profile-decoration">
+                        <div class="decoration-ring"></div>
+                        <div class="decoration-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-preview-text">
+                    <p class="about-intro">
+                        <strong>Application Development Analyst at Accenture</strong> specializing in 
+                        CI/CD pipelines, cloud infrastructure, and DevOps automation.
+                    </p>
+                    <p class="about-tagline">
+                        "Successfully migrated CI/CD from GitLab to GitHub Actions, increasing deployment speed by 50%"
+                    </p>
+                    <a href="about.html" class="btn btn-outline">
+                        Learn More About Me
+                        <span class="material-icons-round">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <div class="stats-showcase">
+                <div class="stat-card" data-value="3">
+                    <div class="stat-icon">
+                        <span class="material-icons-round">work_history</span>
+                    </div>
+                    <span class="stat-number">4+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card" data-value="50">
+                    <div class="stat-icon">
+                        <span class="material-icons-round">rocket_launch</span>
+                    </div>
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Apps Orchestrated</span>
+                </div>
+                <div class="stat-card" data-value="50">
+                    <div class="stat-icon">
+                        <span class="material-icons-round">speed</span>
+                    </div>
+                    <span class="stat-number">50%</span>
+                    <span class="stat-label">Faster Deployments</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Preview -->
+    <section class="preview-section skills-preview-section">
+        <div class="section-header">
+            <span class="section-tag">02</span>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-hex-grid">
+            <div class="hex-item hex-1">
+                <div class="hex-content">
+                    <span class="material-icons-round">cloud</span>
+                    <span>AWS</span>
+                </div>
+            </div>
+            <div class="hex-item hex-2">
+                <div class="hex-content">
+                    <span class="material-icons-round">inventory_2</span>
+                    <span>Docker</span>
+                </div>
+            </div>
+            <div class="hex-item hex-3">
+                <div class="hex-content">
+                    <span class="material-icons-round">settings_suggest</span>
+                    <span>CI/CD</span>
+                </div>
+            </div>
+            <div class="hex-item hex-4">
+                <div class="hex-content">
+                    <span class="material-icons-round">hub</span>
+                    <span>K8s</span>
+                </div>
+            </div>
+            <div class="hex-item hex-5">
+                <div class="hex-content">
+                    <span class="material-icons-round">terminal</span>
+                    <span>Terraform</span>
+                </div>
+            </div>
+            <div class="hex-item hex-6">
+                <div class="hex-content">
+                    <span class="material-icons-round">security</span>
+                    <span>Security</span>
+                </div>
+            </div>
+        </div>
+        <div class="skills-cta">
+            <a href="skills.html" class="btn btn-outline">
+                Explore All Skills
+                <span class="material-icons-round">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Certifications Preview -->
+    <section class="preview-section">
+        <div class="section-header">
+            <span class="section-tag">✓</span>
+            <h2 class="section-title">Certifications</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="certifications-grid">
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <span class="material-icons-round">verified</span>
+                </div>
+                <div class="cert-info">
+                    <h4>KCNA</h4>
+                    <p>Kubernetes and Cloud Native Associate</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="cert-info">
+                    <h4>GitHub Actions</h4>
+                    <p>KodeKloud Certified</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fab fa-docker"></i>
+                </div>
+                <div class="cert-info">
+                    <h4>Docker</h4>
+                    <p>KodeKloud Certified</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section class="preview-section">
+        <div class="section-header">
+            <span class="section-tag">03</span>
+            <h2 class="section-title">Key Achievements</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="preview-content">
+            <div class="projects-preview-grid">
+                <div class="project-preview-card">
+                    <div class="project-preview-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitLab to GitHub Migration</h3>
+                    <p>Led successful CI/CD pipeline migration</p>
+                </div>
+                <div class="project-preview-card">
+                    <div class="project-preview-icon">
+                        <span class="material-icons-round">widgets</span>
+                    </div>
+                    <h3>CPC Templates</h3>
+                    <p>Reusable CI/CD for Node.js, Java, Python, .NET</p>
+                </div>
+                <div class="project-preview-card">
+                    <div class="project-preview-icon">
+                        <span class="material-icons-round">analytics</span>
+                    </div>
+                    <h3>DORA Metrics</h3>
+                    <p>Implemented deployment insights tracking</p>
+                </div>
+            </div>
+            <a href="projects.html" class="btn btn-outline">
+                View All Projects
+                <span class="material-icons-round">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Awards Preview -->
+    <section class="preview-section">
+        <div class="section-header">
+            <span class="section-tag">🏆</span>
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="awards-grid">
+            <div class="award-item">
+                <span class="material-icons-round">emoji_events</span>
+                <span>XTRA MILE Award</span>
+            </div>
+            <div class="award-item">
+                <span class="material-icons-round">military_tech</span>
+                <span>Client Champion Award</span>
+            </div>
+            <div class="award-item">
+                <span class="material-icons-round">workspace_premium</span>
+                <span>Commitment of Excellence</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="preview-section">
+        <div class="section-header">
+            <span class="section-tag">04</span>
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="preview-content">
+            <div class="blog-preview-list">
+                <a href="blog.html" class="blog-preview-item">
+                    <span class="blog-preview-date">Dec 10</span>
+                    <span class="blog-preview-title">Getting Started with Kubernetes</span>
+                    <span class="material-icons-round">arrow_forward</span>
+                </a>
+                <a href="blog.html" class="blog-preview-item">
+                    <span class="blog-preview-date">Nov 28</span>
+                    <span class="blog-preview-title">Building CI/CD Pipelines That Work</span>
+                    <span class="material-icons-round">arrow_forward</span>
+                </a>
+                <a href="blog.html" class="blog-preview-item">
+                    <span class="blog-preview-date">Nov 15</span>
+                    <span class="blog-preview-title">GitLab vs GitHub Actions</span>
+                    <span class="material-icons-round">arrow_forward</span>
+                </a>
+            </div>
+            <a href="blog.html" class="btn btn-outline">
+                Read All Articles
+                <span class="material-icons-round">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Preview -->
+    <section class="preview-section contact-preview">
+        <div class="section-header">
+            <span class="section-tag">05</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="preview-content center">
+            <p class="preview-text-center">
+                Looking for a DevOps Engineer to optimize your CI/CD pipelines? Let's connect!
+            </p>
+            <a href="contact.html" class="btn btn-primary btn-large">
+                <span class="material-icons-round">mail</span>
+                Contact Me
+            </a>
+            <div class="contact-preview-socials">
+                <a href="https://github.com/apoorv-katiyar" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/apoorvkatiyar" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:Katiyar.apoorv97@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Designed & Built by <strong>Apoorv Katiyar</strong></p>
+            <p class="footer-tech">Made with <span class="heart">♥</span> using HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <span class="material-icons-round">keyboard_arrow_up</span>
+    </button>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
