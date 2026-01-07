@@ -21,21 +21,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      
       - name: Build with Docker
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: false
-          outputs: type=docker,dest=/tmp/image.tar
-      
-      - name: Load Docker image and extract dist
         run: |
-          docker load --input /tmp/image.tar
-          docker run --rm -v ${{ github.workspace }}/dist:/tmp/dist $(docker images -q | head -1) cp -r /app/dist /tmp/dist
+          docker build -t portfolio-builder .
+          docker run --rm -v ${{ github.workspace }}:/workspace portfolio-builder sh -c "cp -r /app/dist /workspace/dist"
+      
+      - name: Verify dist folder
+        run: |
           ls -la dist/
+          echo "Build artifacts created successfully"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
