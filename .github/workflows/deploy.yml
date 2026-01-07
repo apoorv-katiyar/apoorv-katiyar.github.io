@@ -15,28 +15,46 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Build with Docker
         run: |
           docker build -t portfolio-builder .
           docker run --rm -v ${{ github.workspace }}:/workspace portfolio-builder sh -c "cp -r /app/dist /workspace/dist"
       
-      - name: Verify dist folder
+      - name: Verify build output
         run: |
+          echo "✓ Build artifacts created:"
           ls -la dist/
-          echo "Build artifacts created successfully"
       
-      - name: Commit and push dist folder
+      - name: Deploy to gh-pages branch
         run: |
+          # Configure git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add dist/ -f
-          git commit -m "chore: update built site [skip ci]" || true
-          git push
+          
+          # Create orphan gh-pages branch (no history)
+          git checkout --orphan gh-pages || git checkout gh-pages
+          
+          # Remove all files
+          git rm -rf . || true
+          
+          # Copy dist contents to root
+          cp -r dist/* .
+          
+          # Add all files
+          git add .
+          
+          # Commit
+          git commit -m "Deploy: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "No changes to commit"
+          
+          # Push to gh-pages
+          git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
