@@ -159,10 +159,12 @@ async function setupDist() {
 
 async function copyAssets() {
   await fs.copy(path.join(SRC_DIR, "assets"), path.join(DIST_DIR, "assets"));
-  await fs.copy(
-    path.join(__dirname, "../favicon.ico"),
-    path.join(DIST_DIR, "favicon.ico")
-  );
+
+  // Copy favicon if it exists
+  const faviconPath = path.join(__dirname, "../favicon.ico");
+  if (fs.existsSync(faviconPath)) {
+    await fs.copy(faviconPath, path.join(DIST_DIR, "favicon.ico"));
+  }
   console.log("✓ Copied assets");
 }
 
