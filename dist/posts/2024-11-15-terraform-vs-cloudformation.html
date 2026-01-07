@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A detailed comparison of Terraform and AWS CloudFormation to help you choose the right Infrastructure as Code tool." />
+  <meta name="author" content="Apoorv Katiyar" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://apoorv-katiyar.github.io/posts/2024-11-15-terraform-vs-cloudformation.html" />
+  <meta property="og:title" content="Terraform vs CloudFormation: Choosing the Right IaC Tool" />
+  <meta property="og:description" content="A detailed comparison of Terraform and AWS CloudFormation to help you choose the right Infrastructure as Code tool." />
+
+  <title>Terraform vs CloudFormation: Choosing the Right IaC Tool | Apoorv Katiyar</title>
+
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+  <link rel="stylesheet" href="../assets/css/markdown-features.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+  />
+</head>
+
+
+<body>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-brand" aria-label="Apoorv Katiyar - Home">
+        <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+        <span class="brand-text">AK</span>
+    </a>
+    <ul class="nav-links" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="projects.html" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="achievements.html" class="nav-link" role="menuitem">Achievements</a></li>
+        <li role="none"><a href="blog.html" class="nav-link" role="menuitem">Blog</a></li>
+        <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">
+            <span class="material-icons-round theme-icon-dark" aria-hidden="true">dark_mode</span>
+            <span class="material-icons-round theme-icon-light" aria-hidden="true">light_mode</span>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+    <main>
+        <article class="blog-post page-section">
+            <div class="section-header">
+                <span class="section-tag" aria-hidden="true">📝</span>
+                <h1 class="section-title">Blog Post</h1>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <a href="../blog.html" class="back-link">
+                <span class="material-icons-round">arrow_back</span>
+                Back to All Articles
+            </a>
+
+            <div class="post-card glass-card">
+                <header class="post-header">
+                    <span class="blog-category">Infrastructure</span>
+                    <h2 class="post-title">Terraform vs CloudFormation: Choosing the Right IaC Tool</h2>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="author-avatar-small">
+                                <span class="material-icons-round">person</span>
+                            </div>
+                            <span>Apoorv Katiyar</span>
+                        </div>
+                        <span class="meta-divider">•</span>
+                        <time class="post-date" datetime="Fri Nov 15 2024 00:00:00 GMT+0000 (Coordinated Universal Time)">
+                            <span class="material-icons-round">calendar_today</span>
+                            Fri Nov 15 2024 00:00:00 GMT+0000 (Coordinated Universal Time)
+                        </time>
+                        <span class="meta-divider">•</span>
+                        <span class="post-read-time">
+                            <span class="material-icons-round">schedule</span>
+                            7 min read
+                        </span>
+                    </div>
+                    <div class="post-tags">
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">CloudFormation</span>
+                        <span class="skill-tag">IaC</span>
+                    </div>
+                </header>
+
+                <div class="post-body">
+                    <p>When it comes to Infrastructure as Code (IaC), Terraform and AWS CloudFormation are two of the most popular choices. Let&#39;s compare them to help you make an informed decision.</p>
+<h2 id="overview">Overview</h2><h3 id="terraform">Terraform</h3><ul>
+<li><strong>Provider:</strong> HashiCorp</li>
+<li><strong>Language:</strong> HCL (HashiCorp Configuration Language)</li>
+<li><strong>Cloud Support:</strong> Multi-cloud (AWS, Azure, GCP, and 1000+ providers)</li>
+<li><strong>State Management:</strong> Remote state with backends</li>
+<li><strong>Open Source:</strong> Yes (with enterprise version available)</li>
+</ul>
+<h3 id="cloudformation">CloudFormation</h3><ul>
+<li><strong>Provider:</strong> AWS</li>
+<li><strong>Language:</strong> JSON or YAML</li>
+<li><strong>Cloud Support:</strong> AWS only</li>
+<li><strong>State Management:</strong> Managed by AWS</li>
+<li><strong>Open Source:</strong> No (AWS managed service)</li>
+</ul>
+<h2 id="key-differences">Key Differences</h2><h3 id="1-multi-cloud-support">1. Multi-Cloud Support</h3><p><strong>Terraform:</strong></p>
+<pre><code class="hljs language-hcl"># AWS Resources
+resource "aws_instance" "web" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+}
+
+# Azure Resources (same configuration file)
+resource "azurerm_virtual_machine" "vm" {
+  name                  = "myVM"
+  location              = "East US"
+  resource_group_name   = azurerm_resource_group.main.name
+  # ...
+}</code></pre><p><strong>CloudFormation:</strong></p>
+<ul>
+<li>AWS only - no multi-cloud support</li>
+<li>Need different tools for other clouds</li>
+</ul>
+<h3 id="2-syntax-and-readability">2. Syntax and Readability</h3><p><strong>Terraform (HCL):</strong></p>
+<pre><code class="hljs language-hcl">resource "aws_s3_bucket" "data" {
+  bucket = "my-data-bucket"
+  
+  versioning {
+    enabled = true
+  }
+  
+  tags = {
+    Environment = "Production"
+    Team        = "DevOps"
+  }
+}</code></pre><p><strong>CloudFormation (YAML):</strong></p>
+<pre><code class="hljs language-yaml"><span class="hljs-attr">Resources:</span>
+  <span class="hljs-attr">DataBucket:</span>
+    <span class="hljs-attr">Type:</span> <span class="hljs-string">AWS::S3::Bucket</span>
+    <span class="hljs-attr">Properties:</span>
+      <span class="hljs-attr">BucketName:</span> <span class="hljs-string">my-data-bucket</span>
+      <span class="hljs-attr">VersioningConfiguration:</span>
+        <span class="hljs-attr">Status:</span> <span class="hljs-string">Enabled</span>
+      <span class="hljs-attr">Tags:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">Key:</span> <span class="hljs-string">Environment</span>
+          <span class="hljs-attr">Value:</span> <span class="hljs-string">Production</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">Key:</span> <span class="hljs-string">Team</span>
+          <span class="hljs-attr">Value:</span> <span class="hljs-string">DevOps</span></code></pre><h3 id="3-state-management">3. State Management</h3><p><strong>Terraform:</strong></p>
+<ul>
+<li>Explicit state file</li>
+<li>Requires backend configuration</li>
+<li>State locking with DynamoDB</li>
+<li>Manual state management</li>
+</ul>
+<pre><code class="hljs language-hcl">terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state"
+    key            = "prod/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
+}</code></pre><p><strong>CloudFormation:</strong></p>
+<ul>
+<li>State managed automatically by AWS</li>
+<li>No manual state management needed</li>
+<li>Built-in change sets for preview</li>
+</ul>
+<h3 id="4-modularity-and-reusability">4. Modularity and Reusability</h3><p><strong>Terraform Modules:</strong></p>
+<pre><code class="hljs language-hcl">module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "3.0.0"
+  
+  name = "my-vpc"
+  cidr = "10.0.0.0/16"
+  
+  azs             = ["us-east-1a", "us-east-1b"]
+  private_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
+  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24"]
+}</code></pre><p><strong>CloudFormation Nested Stacks:</strong></p>
+<pre><code class="hljs language-yaml"><span class="hljs-attr">Resources:</span>
+  <span class="hljs-attr">VPCStack:</span>
+    <span class="hljs-attr">Type:</span> <span class="hljs-string">AWS::CloudFormation::Stack</span>
+    <span class="hljs-attr">Properties:</span>
+      <span class="hljs-attr">TemplateURL:</span> <span class="hljs-string">https://s3.amazonaws.com/templates/vpc.yaml</span>
+      <span class="hljs-attr">Parameters:</span>
+        <span class="hljs-attr">VPCName:</span> <span class="hljs-string">my-vpc</span>
+        <span class="hljs-attr">CIDR:</span> <span class="hljs-number">10.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span><span class="hljs-string">/16</span></code></pre><h2 id="pros-and-cons">Pros and Cons</h2><h3 id="terraform">Terraform</h3><p><strong>Pros:</strong><br>✅ Multi-cloud support<br>✅ Large community and module registry<br>✅ Better for complex infrastructures<br>✅ Plan command shows changes before apply<br>✅ More readable HCL syntax<br>✅ Extensive provider ecosystem  </p>
+<p><strong>Cons:</strong><br>❌ Requires state management<br>❌ State file security concerns<br>❌ Learning curve for state management<br>❌ Potential state drift issues  </p>
+<h3 id="cloudformation">CloudFormation</h3><p><strong>Pros:</strong><br>✅ Native AWS integration<br>✅ No state management needed<br>✅ Change sets for preview<br>✅ Drift detection built-in<br>✅ Free to use<br>✅ IAM integration  </p>
+<p><strong>Cons:</strong><br>❌ AWS only<br>❌ Verbose YAML/JSON syntax<br>❌ Slower updates for new AWS services<br>❌ Limited modularity<br>❌ Stack limits (200 resources, 500 outputs)  </p>
+<h2 id="when-to-use-terraform">When to Use Terraform</h2><p>Choose Terraform if you:</p>
+<ul>
+<li>Need multi-cloud support</li>
+<li>Want better modularity and reusability</li>
+<li>Prefer HCL over JSON/YAML</li>
+<li>Have complex infrastructure requirements</li>
+<li>Want access to community modules</li>
+<li>Need to manage non-AWS resources</li>
+</ul>
+<h2 id="when-to-use-cloudformation">When to Use CloudFormation</h2><p>Choose CloudFormation if you:</p>
+<ul>
+<li>Only use AWS</li>
+<li>Want AWS-native integration</li>
+<li>Prefer managed state</li>
+<li>Need built-in drift detection</li>
+<li>Want simpler setup (no state backend)</li>
+<li>Require AWS-specific features quickly</li>
+</ul>
+<h2 id="my-experience">My Experience</h2><p>At Accenture, I&#39;ve used both tools:</p>
+<p><strong>Terraform:</strong></p>
+<ul>
+<li>Managed multi-environment AWS infrastructure</li>
+<li>Used modules for VPC, EKS, RDS</li>
+<li>Implemented remote state with S3 and DynamoDB</li>
+<li>Created reusable modules for teams</li>
+</ul>
+<p><strong>CloudFormation:</strong></p>
+<ul>
+<li>Quick AWS-specific deployments</li>
+<li>Serverless applications with SAM</li>
+<li>Simple stack management</li>
+<li>AWS service catalog integration</li>
+</ul>
+<h2 id="hybrid-approach">Hybrid Approach</h2><p>You can use both:</p>
+<ul>
+<li><strong>Terraform</strong> for core infrastructure (VPC, networking)</li>
+<li><strong>CloudFormation</strong> for application stacks</li>
+<li><strong>CDK</strong> (AWS Cloud Development Kit) as alternative to CloudFormation</li>
+</ul>
+<h2 id="best-practices">Best Practices</h2><h3 id="for-terraform">For Terraform:</h3><ol>
+<li>Always use remote state</li>
+<li>Enable state locking</li>
+<li>Use modules for reusability</li>
+<li>Version your modules</li>
+<li>Use workspaces for environments</li>
+</ol>
+<h3 id="for-cloudformation">For CloudFormation:</h3><ol>
+<li>Use nested stacks for modularity</li>
+<li>Leverage change sets</li>
+<li>Use parameters for flexibility</li>
+<li>Enable termination protection</li>
+<li>Tag all resources</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2><p>Both tools are excellent for IaC. Your choice depends on:</p>
+<ul>
+<li><strong>Cloud strategy</strong> - Multi-cloud → Terraform</li>
+<li><strong>Team expertise</strong> - Existing knowledge matters</li>
+<li><strong>Requirements</strong> - Complexity and scale</li>
+<li><strong>Integration needs</strong> - AWS-native vs. multi-cloud</li>
+</ul>
+<p>In my opinion, <strong>Terraform</strong> is better for:</p>
+<ul>
+<li>Complex, multi-cloud environments</li>
+<li>Teams wanting flexibility</li>
+<li>Long-term infrastructure management</li>
+</ul>
+<p><strong>CloudFormation</strong> is better for:</p>
+<ul>
+<li>AWS-only shops</li>
+<li>Quick AWS deployments</li>
+<li>Teams preferring managed services</li>
+</ul>
+<p>What&#39;s your experience? Let me know in the comments!</p>
+
+                </div>
+
+                <footer class="post-footer">
+                    <div class="share-section">
+                        <span class="share-label">Share this post:</span>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=Terraform vs CloudFormation: Choosing the Right IaC Tool&url=https://apoorv-katiyar.github.io/posts/2024-11-15-terraform-vs-cloudformation.html" target="_blank"
+                                class="social-link" title="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://apoorv-katiyar.github.io/posts/2024-11-15-terraform-vs-cloudformation.html" target="_blank"
+                                class="social-link" title="Share on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+        <p>Designed & Built by <strong>Apoorv Katiyar</strong></p>
+        <p class="footer-tech">Made with <span class="heart" aria-hidden="true">♥</span> using HTML, CSS & JavaScript
+        </p>
+    </div>
+</footer>
+
+<button class="scroll-top" aria-label="Scroll to top">
+    <span class="material-icons-round" aria-hidden="true">keyboard_arrow_up</span>
+</button>
+
+<script src="../assets/js/main.js" defer></script>
+    
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- Mermaid for diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#6366f1',
+                primaryTextColor: '#e2e8f0',
+                primaryBorderColor: '#4f46e5',
+                lineColor: '#94a3b8',
+                secondaryColor: '#8b5cf6',
+                tertiaryColor: '#ec4899'
+            }
+        });
+    </script>
+</body>
+
+</html>
