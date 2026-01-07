@@ -21,17 +21,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      - name: Build with Docker
+        uses: docker/build-push-action@v5
         with:
-          node-version: '20'
-          cache: 'npm'
+          context: .
+          push: false
+          outputs: type=docker,dest=/tmp/image.tar
       
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build site
-        run: npm run build
+      - name: Load Docker image and extract dist
+        run: |
+          docker load --input /tmp/image.tar
+          docker run --rm -v ${{ github.workspace }}/dist:/tmp/dist $(docker images -q | head -1) cp -r /app/dist /tmp/dist
+          ls -la dist/
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
