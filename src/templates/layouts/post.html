@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+{{HEADER}}
+
+<body>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    {{NAV}}
+
+    <main>
+        <article class="blog-post page-section">
+            <div class="section-header">
+                <span class="section-tag" aria-hidden="true">📝</span>
+                <h1 class="section-title">Blog Post</h1>
+                <div class="section-line" aria-hidden="true"></div>
+            </div>
+
+            <a href="../blog.html" class="back-link">
+                <span class="material-icons-round">arrow_back</span>
+                Back to All Articles
+            </a>
+
+            <div class="post-card glass-card">
+                <header class="post-header">
+                    <span class="blog-category">{{CATEGORY}}</span>
+                    <h2 class="post-title">{{TITLE}}</h2>
+                    <div class="post-meta">
+                        <div class="post-author">
+                            <div class="author-avatar-small">
+                                <span class="material-icons-round">person</span>
+                            </div>
+                            <span>Apoorv Katiyar</span>
+                        </div>
+                        <span class="meta-divider">•</span>
+                        <time class="post-date" datetime="{{DATE}}">
+                            <span class="material-icons-round">calendar_today</span>
+                            {{DATE}}
+                        </time>
+                        <span class="meta-divider">•</span>
+                        <span class="post-read-time">
+                            <span class="material-icons-round">schedule</span>
+                            {{READ_TIME}} read
+                        </span>
+                    </div>
+                    <div class="post-tags">
+                        {{TAGS}}
+                    </div>
+                </header>
+
+                <div class="post-body">
+                    {{CONTENT}}
+                </div>
+
+                <footer class="post-footer">
+                    <div class="share-section">
+                        <span class="share-label">Share this post:</span>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text={{TITLE}}&url={{URL}}" target="_blank"
+                                class="social-link" title="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{URL}}" target="_blank"
+                                class="social-link" title="Share on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    {{FOOTER}}
+    
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- Mermaid for diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#6366f1',
+                primaryTextColor: '#e2e8f0',
+                primaryBorderColor: '#4f46e5',
+                lineColor: '#94a3b8',
+                secondaryColor: '#8b5cf6',
+                tertiaryColor: '#ec4899'
+            }
+        });
+    </script>
+</body>
+
+</html>

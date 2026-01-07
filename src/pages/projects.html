@@ -26,8 +26,8 @@
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     
-    <link rel="preload" href="css/portfolio.css" as="style">
-    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="preload" href="assets/css/portfolio.css" as="style">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
 </head>
 <body>
     <div class="bg-gradient" aria-hidden="true"></div>
@@ -82,9 +82,9 @@
                         </div>
                         <h2>GitLab to GitHub Actions Migration</h2>
                         <p>
-                            Successfully led the migration of entire CI/CD pipelines from GitLab to GitHub Actions, 
-                            enhancing integration, efficiency, and team adoption through detailed planning, testing, 
-                            and comprehensive training sessions.
+                            Successfully migrated 12+ applications from GitLab to GitHub Actions with zero downtime, 
+                            cutting deployment time by 50%. Enhanced integration, efficiency, and team adoption through 
+                            detailed planning, testing, and comprehensive training sessions.
                         </p>
                     </div>
                 </article>
@@ -103,9 +103,34 @@
                         </div>
                         <h2>Common Pipeline Components (CPC)</h2>
                         <p>
-                            Designed and developed reusable CPC Templates for build, test, publish, scan, 
-                            and quality steps. These templates are now used by multiple teams across different 
-                            technology stacks.
+                            Designed and maintained reusable GitLab CI/CD templates with standard stages for build, test, 
+                            validation, security scan, artifact publishing, and code coverage. These templates support multiple 
+                            languages and are now used by 25+ teams, significantly reducing pipeline development time while 
+                            maintaining consistency. Added retry logic and detailed logging for better reliability.
+                        </p>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder" aria-hidden="true">
+                            <span class="material-icons-round">cloud_sync</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags" aria-label="Technologies used">
+                            <span>GitLab CI/CD</span>
+                            <span>Vault</span>
+                            <span>Nexus</span>
+                            <span>AWS S3</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <h2>VP2 Templates</h2>
+                        <p>
+                            Created a centralized CI/CD automation for frontend microservices including secure credential 
+                            retrieval from Vault, artifact promotion to Nexus and S3, deployment tracking in MongoDB. 
+                            Integrated security scans (BlackDuck, SAST) and quality checks (SonarQube) with automated gates. 
+                            Implemented blue-green deployment strategy for zero-downtime releases. Reduced deployment errors 
+                            by 40% and enabled daily deployments.
                         </p>
                     </div>
                 </article>
@@ -209,6 +234,7 @@
         <span class="material-icons-round" aria-hidden="true">keyboard_arrow_up</span>
     </button>
 
-    <script src="js/main.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+
