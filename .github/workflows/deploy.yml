@@ -7,12 +7,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -20,41 +14,43 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       
-      - name: Build with Docker
-        run: |
-          docker build -t portfolio-builder .
-          docker run --rm -v ${{ github.workspace }}:/workspace portfolio-builder sh -c "cp -r /app/dist /workspace/dist"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build site
+        run: npm run build
       
       - name: Verify build output
         run: |
-          echo "✓ Build artifacts created:"
+          echo "✓ Build completed. Files in dist:"
           ls -la dist/
       
-      - name: Deploy to gh-pages branch
+      - name: Deploy to gh-pages
         run: |
-          # Configure git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Create orphan gh-pages branch (no history)
-          git checkout --orphan gh-pages || git checkout gh-pages
+          if git rev-parse --verify origin/gh-pages > /dev/null 2>&1; then
+            git checkout gh-pages
+            git pull origin gh-pages
+          else
+            git checkout --orphan gh-pages
+          fi
           
-          # Remove all files
-          git rm -rf . || true
+          find . -maxdepth 1 -type f -delete
+          find . -maxdepth 1 -type d ! -name '.git' -exec rm -rf {} + 2>/dev/null || true
           
-          # Copy dist contents to root
           cp -r dist/* .
           
-          # Add all files
           git add .
+          git commit -m "Deploy: $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes"
           
-          # Commit
-          git commit -m "Deploy: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "No changes to commit"
-          
-          # Push to gh-pages
-          git push origin gh-pages --force
+          git push -u origin gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
