@@ -81,14 +81,11 @@ Then run `npm run build` to generate the HTML.
 
 ## 🌐 Deployment (GitHub Pages)
 
-The workflow builds the site and deploys the `dist/` folder to the **gh-pages** branch. For the live site to show the portfolio (not the README), configure Pages to use that branch:
+The workflow uses GitHub’s official Actions (`upload-pages-artifact` + `deploy-pages`) to build and deploy the site—no third-party actions or `gh-pages` branch.
 
 1. Go to **Settings → Pages** in this repo.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Choose **Branch**: `gh-pages`, **Folder**: `/ (root)`.
-4. Save. The site at `https://apoorv-katiyar.github.io` will serve the built portfolio.
-
-Pushing to `main` or `master` (or running the workflow manually) triggers a deploy.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Pushing to `main` or `master` (or running the “Deploy to GitHub Pages” workflow manually) will build and deploy. The site at `https://apoorv-katiyar.github.io` will serve the built portfolio.
 
 ## 🛡️ DevOps & Security Practices
 - CI checks for build and optional linting
