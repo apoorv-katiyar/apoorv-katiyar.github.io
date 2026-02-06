@@ -89,7 +89,7 @@ The workflow uses GitHub’s official Actions (`upload-pages-artifact` + `deploy
 
 ### ⚠️ Troubleshooting: I see the README instead of my portfolio
 
-If the live site shows this README (Quick Start, Writing Blog Posts, etc.) instead of your portfolio UI, **the publishing source is still set to “Deploy from a branch”**. In that mode, GitHub serves the **root of the branch** (where there is no `index.html`), so it renders `README.md` as the index.
+If the live site shows this README (Quick Start, Writing Blog Posts, etc.) instead of your portfolio UI, **the publishing source is still set to “Deploy from a branch”**. For full debug and verification, see **DEBUG-GITHUB-PAGES.md**. In that mode, GitHub serves the **root of the branch** (where there is no `index.html`), so it renders `README.md` as the index.
 
 **Fix (per [GitHub’s docs](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow)):**
 

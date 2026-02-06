@@ -31,6 +31,14 @@ jobs:
       - name: Add .nojekyll
         run: touch dist/.nojekyll
 
+      - name: Verify build output (diagnostic)
+        run: |
+          echo "Contents of dist/ (this is what gets deployed):"
+          ls -la dist/
+          echo "---"
+          test -f dist/index.html && echo "✓ index.html present" || (echo "✗ index.html MISSING" && exit 1)
+          test -d dist/assets && echo "✓ assets/ present" || echo "✗ assets/ missing"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
