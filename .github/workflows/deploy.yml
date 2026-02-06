@@ -2,31 +2,37 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      
-      - run: npm install
-      
+          node-version: "20"
+
+      - run: npm ci
+
       - run: npm run build
-      
-      - run: touch dist/.nojekyll
-      
-      - run: |
-          git config user.email "action@github.com"
-          git config user.name "Deploy"
-          git add dist -f
-          git commit -m "Deploy build" || true
-          git push
+
+      - name: Add .nojekyll
+        run: touch dist/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
