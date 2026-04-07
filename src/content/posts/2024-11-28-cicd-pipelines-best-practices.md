@@ -96,7 +96,7 @@ Track DORA metrics to understand your pipeline health:
 
 ## Real-World Example
 
-At my current role, I led a migration from GitLab CI to GitHub Actions for 12+ applications. Here's what we achieved:
+At my current role, I led a migration from GitLab CI to GitHub Actions for 3+ applications. Here's what we achieved:
 
 - ⚡ 50% faster deployments
 - 📉 80% reduction in flaky tests
